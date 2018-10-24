@@ -16,4 +16,4 @@ export const numberWithSuffix = (num) => {
   }
 
   return `${num}${suffix}`
-}
+};

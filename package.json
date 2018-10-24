@@ -8,6 +8,7 @@
     "breakpoint-sass": "^2.7.1",
     "chroma-sass": "^1.2.6",
     "es6-promise": "^4.2.5",
+    "feather-icons": "^4.7.3",
     "gatsby": "^2.0.0",
     "gatsby-plugin-create-client-paths": "^2.0.0",
     "gatsby-plugin-manifest": "^2.0.2",

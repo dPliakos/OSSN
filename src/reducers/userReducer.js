@@ -4,7 +4,7 @@ const initial = {
   requestSuccess: false,
   requestError: false,
   loggedIn: false
-}
+};
 
 const userReducer = (state=initial, action) => {
   switch (action.type) {
@@ -22,7 +22,7 @@ const userReducer = (state=initial, action) => {
           page: action.payload.page,
           clubLeader: action.payload.leader
         }
-      }
+      };
 
       return loggeInState;
 
@@ -32,13 +32,13 @@ const userReducer = (state=initial, action) => {
         ...state,
         loggedIn: false,
         user: {}
-      }
+      };
 
       return loggedOutState;
 
     default:
       return state;
   }
-}
+};
 
 export default userReducer;

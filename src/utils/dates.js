@@ -12,7 +12,7 @@ export const getDayName = (num) => {
     case 6: return 'Sunday';
     default: return 'ERROR parsing day';
   }
-}
+};
 
 // conver the `new Date().getMonth()` number to it's verbose representation
 export const getMonthName = (num) => {
@@ -31,7 +31,7 @@ export const getMonthName = (num) => {
     case 11: return 'December';
     default: return 'ERROR parsing month ';
   }
-}
+};
 
 // project specific.
 // get the date string from the announcements and job listing
@@ -44,4 +44,4 @@ export const verboseDate = (timestamp) => {
   const dateString = `${verboseDayName}, ${verboseMonthName} ${suffixedDate} ${date.getFullYear()}`;
 
   return dateString;
-}
+};
