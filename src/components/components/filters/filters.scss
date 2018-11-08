@@ -8,6 +8,34 @@
   background-color: color('white');
   display: inline-block;
   padding: 15px;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: color('white');
+    max-width: 540px;
+    padding: 10px;
+
+    .filter {
+      padding: 0;
+
+      &--search {
+        label {
+          padding: 0;
+          color: color('blue-dark');
+        }
+
+        input {
+          padding: 0;
+          padding-top: 2px;
+          padding-bottom: 2px;
+          border: none;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
 }
 
 .filter--toggle {

@@ -42,10 +42,19 @@ export class SearchFilter extends React.Component {
   handleSearch = this.props.onChange;
 
   render() {
+    const icon = this.props.icon ? <this.props.icon /> : '';
+
+    const label = this.props.hideLabel
+      ? ''
+      : this.props.label
+        ? this.props.label
+        : 'Search';
+
     return (
       <div className="filter filter--search">
         <label htmlFor={`${this.props.id}`}>
-          Search
+          {icon}
+          {label}
           <input
             type="text"
             placeholder={this.props.placeholder}

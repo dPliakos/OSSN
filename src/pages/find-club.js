@@ -12,6 +12,7 @@ import {
 } from './../components/components/filters/filters';
 import Map from './../components/components/map/map';
 import LayoutContained from './../components/layouts/layout-contained/layout-contained';
+import { Search } from 'react-feather';
 
 // TODO: Remove and fid title another way.
 class Clubs extends React.PureComponent {
@@ -74,13 +75,22 @@ class Clubs extends React.PureComponent {
         </Helmet>
         <LayoutContained>
           <h1> Clubs </h1>
-          <ToggleFilter
-            onClick={this.handleToggleMap}
-            active={snapshot.view === 'map'}
-            left="list"
-            right="map"
-          />
-          <SearchFilter placeholder="Filter" onChange={this.handleSearch} />
+          <div className="filter__wrapper filter__wrapper--clubs">
+            <ToggleFilter
+              onClick={this.handleToggleMap}
+              active={snapshot.view === 'map'}
+              left="list"
+              right="map"
+            />
+            <SearchFilter
+              placeholder="Filter"
+              onChange={this.handleSearch}
+              id="find-club-search"
+              hideLabel
+              icon={Search}
+            />
+          </div>
+
           {content}
         </LayoutContained>
       </BasicLayout>
