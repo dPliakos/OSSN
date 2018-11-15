@@ -6,8 +6,6 @@ import { graphql } from 'gatsby';
 // Local modules.
 import BasicLayout from '../components/layouts/layout-base/layout-base';
 import LayoutContained from './../components/layouts/layout-contained/layout-contained';
-import MemberTeaser from './../components/components/member-teaser/member-teaser';
-import Layout2Col from './../components/layouts/layout-2col/layout-2col';
 import Layout2ColsUnequal from './../components/layouts/layout-2col-unequal/layout-2col-unequal';
 import BoxShadow from './../components/components/shadow-box/shadow-box';
 import {
@@ -15,6 +13,7 @@ import {
   SelectFilter
 } from './../components/components/filters/filters';
 import JoinCta from './../components/components/join-cta/join-cta';
+import MemberList from './../components/components/member-list/member-list';
 
 // Import page title from gatsby config. TODO Remove and fid title another way.
 import GatsbyConfig from './../../gatsby-config';
@@ -44,18 +43,6 @@ class Members extends React.PureComponent {
     const snapshot = { ...this.state };
     let members = this.props.data.ossnApi.users.slice();
     let totalCount = this.props.data.ossnApi.users.length;
-
-    const memberList = members.map((member, i) => {
-      // console.log(member);
-      return (
-        <div key={i}>
-          <MemberTeaser member={member} id={i} />
-        </div>
-      );
-    });
-
-    // console.log(this.props.data.ossnApi.users);
-    // return <div> This is the meber list </div>;
 
     return (
       <BasicLayout>
@@ -91,7 +78,7 @@ class Members extends React.PureComponent {
               <div>
                 <BoxShadow>
                   <h2 className="title title--x-small title--centered">
-                    Showing {memberList.length} out of {totalCount} members
+                    Showing {members.length} out of {totalCount} members
                   </h2>
                   <SelectFilter
                     options={snapshot.sortOptions}
@@ -101,9 +88,7 @@ class Members extends React.PureComponent {
                   <SearchFilter />
                 </BoxShadow>
 
-                <Layout2Col horizontalGutters verticalGutters>
-                  {memberList}
-                </Layout2Col>
+                <MemberList members={members} />
               </div>
             </div>
             <div>
